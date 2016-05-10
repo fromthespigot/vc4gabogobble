@@ -49,20 +49,6 @@
           </ul>
         </nav>
 
-        <header>
-          {% if theme.images.header != blank %}
-          <div id="branding">
-            <a href="/">
-              <h2>{{ page.name }}</h2>
-              <img src="{{ theme.images.header.url }}" alt="{{ store.name }}">
-            </a>
-          </div>
-          {% elsif page.name == 'Home' %}
-            <h1 id="store_name"><a href="/">{{ store.name }}</a></h1>
-          {% else %}
-            <h2 id="store_name"><a href="/">{{ store.name }}</a></h2>
-          {% endif %}
-        </header>
 
         <nav id="mobile_nav">
           <ul>

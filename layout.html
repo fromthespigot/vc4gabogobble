@@ -17,37 +17,35 @@
 
     {{ head_content }}
   </head>
-
   <body id="{{ page.permalink }}_page" class="{{ page.category }} no_transition">
     <div id="site_header" class="strip">
-      <div class="canvas">
-        <nav id="main_nav">
-          <ul>
-            <li {% if page.full_url contains '/about' %}class="selected"{% endif %}>
-              <a href="/about">About</a>
-            </li>
-           <li class="dropdown" id="portfoliomenu">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="/art-pieces">Art</a></li>
-                <li><a href="/tattoos">Tattoos</a></li>
+      <div class="wrapper">
+        <nav class="navbar navbar-defualt">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li {% if page.full_url contains '/about' %}class="selected"{% endif %}><a href="/about">About</a></li>
+                <li class="dropdown" id="portfoliomenu"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/art-pieces">Art</a></li>
+                    <li><a href="/tattoos">Tattoos</a></li>
+                  </ul>
+                </li>
+                <li{% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %}class="selected"{% endif %}><a href="/products">Products</a></li>
+                <li {% if page.full_url contains '/cart' %}class="selected"{% endif %}><a href="/cart">Cart</a></li>
+                <li {% if page.full_url contains '/contact' %}class="selected"{% endif %}><a href="/contact">Contact</a></li>
               </ul>
-            </li>
-            <li
-            {% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %}class="selected"{% endif %}
-            >
-              <a href="/products">Products</a>
-            </li>
-            <li {% if page.full_url contains '/cart' %}class="selected"{% endif %}>
-              <a href="/cart">Cart</a>
-            </li>
-            <li {% if page.full_url contains '/contact' %}class="selected"{% endif %}>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
+            </div>
+          </nav>
 
         <header>
           {% if theme.images.header != blank %}
